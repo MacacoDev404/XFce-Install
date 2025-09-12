@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# Define os pacotes que serão instalados
+PACOTES_BASE="xfce4 xorg lightdm-webkit2-greeter lightdm-gtk-greeter lightdm-gtk-greeter-settings linux-lts-headers "
+PACOTES_MULTIMIDIA="ffmpeg vlc"
+PACOTES_THUNAR="thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-vcs-plugin"
+PACOTES_SISTEMA="python python-pip android-tools wget network-manager-applet xdg-user-dirs pavucontrol gvfs gvfs-mtp  blueman bluez bluez-utils usbutils nano git curl fastfetch plank dosfstools gparted ark htop gedit"
+
+echo "Script de instalação padrão xfce"
+
+echo "Atualizando o sistema..."
+sudo pacman -Syu
+
+echo "Sistema atualizado."
+
+echo "Iniciando a instalação dos pacotes..."
+
+sudo pacman -S $PACOTES_BASE $PACOTES_MULTIMIDIA $PACOTES_THUNAR $PACOTES_SISTEMA
+
+echo "Instalação de pacotes concluída."
+
+echo "Instalando drives da gtx550ti via reporitorio Arch (Aur)"
+ 
+yay -S nvidia-390xx-dkms nvidia-390xx-utils nvidia-390xx-settings lib32-nvidia-390xx-utils
+
+echo "Instalação de drives concluida!"
+
+echo "Colocando o Noveau em blacklist"
+ 
+ 
+echo "Gerando initramfs"
+sudo mkinitcpio -P
+ 
+echo "Criando configuração xorg Nvidia"
+sudo nvidia-xconfig
+ 
+echo "Alterando xconfig xorg pra config basica"
+sudo rm  /etc/X11/xorg.conf
+git clone 
+
+echo "Reiniciando o Sistema"
+sudo reboot
