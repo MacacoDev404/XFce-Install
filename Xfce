@@ -26,6 +26,7 @@ yay -S nvidia-390xx-dkms nvidia-390xx-utils nvidia-390xx-settings lib32-nvidia-3
 echo "Instalação de drives concluida!"
 
 echo "Colocando o Noveau em blacklist"
+
   
 echo "Gerando initramfs"
 sudo mkinitcpio -P
@@ -37,6 +38,10 @@ echo "Alterando xconfig xorg pra config basica"
 cd /etc/X11/
 sudo rm xorg.conf
 curl -O https://raw.githubusercontent.com/MacacoDev404/XFce-Install/refs/heads/main/xorg.conf
+
+echo "Configurando fastfetch"
+mkdir -p .config/fastfetch
+mv config.jsonc .config/fastfetch
 
 echo "Reiniciando o Sistema"
 sudo reboot
