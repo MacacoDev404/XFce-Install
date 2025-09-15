@@ -43,5 +43,8 @@ echo "Configurando fastfetch"
 mkdir -p .config/fastfetch
 mv config.jsonc .config/fastfetch
 
+echo "Configurando o nano"
+mv .nanorc ~/
+
 echo "Reiniciando o Sistema"
 sudo reboot
