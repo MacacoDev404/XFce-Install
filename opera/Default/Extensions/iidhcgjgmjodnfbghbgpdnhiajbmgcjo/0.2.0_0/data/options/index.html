@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Options Page</title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <style type="text/css">
+    body {
+      background-color: #fff;
+      color: #3C4043;
+    }
+    @supports (-moz-appearance:none) {
+      body {
+        font-size: 13px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      }
+      button,
+      input[type=submit],
+      input[type=button] {
+        height: 24px;
+        color: rgb(68, 68, 68);
+        background-image: linear-gradient(rgb(237, 237, 237), rgb(237, 237, 237) 38%, rgb(222, 222, 222));
+        box-shadow: rgba(0, 0, 0, 0.08) 0 1px 0, rgba(255, 255, 255, 0.75) 0 1px 2px inset;
+        text-shadow: rgb(240, 240, 240) 0 1px 0;
+        border: solid 1px rgba(0, 0, 0, 0.25);
+      }
+      input[type=button]:disabled {
+        opacity: 0.2;
+      }
+      textarea {
+        padding: 5px;
+        box-sizing: border-box;
+      }
+    }
+    table {
+      width: 100%;
+    }
+    hr {
+      border: none;
+      border-top: dashed 1px #ccc;
+      padding: 0;
+      margin: 10px 0;
+    }
+    code {
+      padding: 0 2px;
+      background-color: rgba(0,0,0,0.05);
+      font-family: inherit;
+    }
+    .note {
+      padding-bottom: 5px;
+    }
+    .hidden {
+      display: none;
+    }
+    .disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      text-decoration: line-through;
+    }
+  </style>
+  <table>
+    <colgroup>
+      <col width=150></col>
+      <col></col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <td>Executable:</td>
+        <td>
+          <input type="text" id="executable" style="width: 100%; margin-top: 5px;">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="note">Path to the executable</td>
+      </tr>
+      <tr>
+        <td>Arguments:</td>
+        <td>
+          <input type="text" id="args" style="width: 100%; margin-top: 5px;">
+        </td>
+      </tr>
+      <tr class="hidden">
+        <td>Remote Server:</td>
+        <td>
+          <input type="text" id="remote" style="width: 100%; margin-top: 5px;">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="note">Arguments to be passed to the executable. List of supported arguments: <code>[URL]</code> (Link URL or image, video, and audio source), <code>[REFERRER]</code> (URL of the parent page), <code>[USERAGENT]</code> (User-agent string), <code>[FILENAME]</code> (Detected filename for the link. If no filename is detected, an empty string is passed), <code>[DISK]</code> (Absolute path of the detected file on the user disk. If no filename is detected, an empty string is passed), <code>[COOKIES]</code> (Absolute path to a text file containing relevant cookies) (available only if supported by the download manager).</td>
+      </tr>
+      <tr cookies>
+        <td><label for="cookies">Cookies</label></td>
+        <td><input type="checkbox" id="cookies"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="note">Send hostname-related cookies to the external application (this might contain your private information, such as personal token or credential. Use it with caution) (available only if supported)</td>
+      </tr>
+      <tr autostart>
+        <td><label for="autostart">Autostart</label></td>
+        <td><input type="checkbox" id="autostart"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="note">If unchecked then the extension requests the external download manager to keep the jobs in the link grabber section instead of automatically start downloading them  (available only if supported)</td>
+      </tr>
+      <tr>
+        <td><label for="batch">Batch mode</label></td>
+        <td><input type="checkbox" id="batch"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="note">When multiple links are about to send to the external download manager, the extension can either send all of the links together or one by one. If the external download manager supports accepting multiple links in a single command, then check this box otherwise, the extension will send each link individually after a delay. For command-line downloaders, providing bulk input links usually results in downloading files sequentially.</td>
+      </tr>
+      <tr>
+        <td><label for="delay">Delay (in milliseconds)</label></td>
+        <td><input type="number" id="delay" min=50></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="note">Delay between requests when multiple jobs are about to send to the external download manager (when the "Batch mode" is disabled)</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding-top: 10px;">Exclude the following <a href="https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types">mime-types</a> when integration is enabled (When the browser action's button is active, downloading files with the following mime-types are not being interrupted by this extension)</td>
+      </tr>
+      <tr>
+        <td colspan="2"><textarea style="width: 100%" rows="3" id="mimes"></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding-top: 10px;">Comma-separated list of hostnames to interrupt the built-in download manager (Only if the extension's interruption mode is enabled from the browser action's button. If the list is not empty, only downloading requests from these hostnames will be automatically interrupted. For all other hostnames, to send a job to the external download manager, use the right-click context menu (on-demand mode). Note that the link's hostname must belong to the actual downloadable link, not the parent page)</td>
+      </tr>
+      <tr>
+        <td colspan="2"><textarea style="width: 100%" rows="3" id="whitelist" placeholder="e.g.: google.com, bing.com"></textarea></td>
+      </tr>
+    </tbody>
+  </table>
+  <table style="margin-top: 10px;">
+    <colgroup>
+      <col width="24">
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" id="context.open-link"></td>
+        <td><label for="context.open-link">Display "Download Link" context menu item</label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="context.open-video"></td>
+        <td><label for="context.open-video">Display "Download Media" context menu item</label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="context.grab"></td>
+        <td><label for="context.grab">Display "Download all Links" context menu item</label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="context.extract"></td>
+        <td><label for="context.extract">Display "Extract Links from Selection" context menu item</label></td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="explore" data-cols="5"></div>
+  <p>
+    <button id="test">Test Page</button> - <button id="reset">Reset</button>
+    <button id="support">Support Development</button> - <button id="save">Save</button>
+    <span id="status"></span>
+  </p>
+
+  <script src="/config.js"></script>
+  <script src="index.js"></script>
+  <script async src="matched.js"></script>
+</body>
+</html>

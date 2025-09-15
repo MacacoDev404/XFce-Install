@@ -1,0 +1,14 @@
+2025/09/15-08:00:59.498 73c Reusing MANIFEST /home/marcondes/.config/opera/Default/IndexedDB/chrome-extension_igpdmclhhlcpoindmhkhillbfhdgoegm_0.indexeddb.leveldb/MANIFEST-000001
+2025/09/15-08:00:59.498 73c Recovering log #10
+2025/09/15-08:00:59.532 73c Reusing old log /home/marcondes/.config/opera/Default/IndexedDB/chrome-extension_igpdmclhhlcpoindmhkhillbfhdgoegm_0.indexeddb.leveldb/000010.log 
+2025/09/15-08:00:59.533 73c Delete type=2 #8
+2025/09/15-08:01:00.402 73c Level-0 table #15: started
+2025/09/15-08:01:00.588 73c Level-0 table #15: 1228 bytes OK
+2025/09/15-08:01:00.758 73c Delete type=0 #10
+2025/09/15-08:01:00.758 73b Manual compaction at level-0 from '\x00\x07\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x08\x00\x00\x00' @ 0 : 0; will stop at '\x00\x07\x00\x00\x05' @ 484 : 1
+2025/09/15-08:01:00.758 73b Compacting 1@0 + 1@1 files
+2025/09/15-08:01:00.922 73b Generated table #16@0: 164 keys, 4459 bytes
+2025/09/15-08:01:00.922 73b Compacted 1@0 + 1@1 files => 4459 bytes
+2025/09/15-08:01:01.111 73b compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/09/15-08:01:01.112 73b Delete type=2 #15
+2025/09/15-08:01:01.112 73b Manual compaction at level-0 from '\x00\x07\x00\x00\x05' @ 484 : 1 .. '\x00\x08\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -1,0 +1,55 @@
+/* general ads */
+
+div[role="main"]>div[class="mq"]>table[class="ae6"],
+div[role="main"]>div[class="mq ae5"]>table[class="ae6"],
+div[role="main"]>div[class="aKB"]>div[class="a2q a4T bc1"],
+div[class*="nH"]>div[class="nH"]>div[class*="nH"]>div[class="Zs"],
+div[role="main"]>div[class*="nH"]>div[class="nH"]>div[class="nH"]>div[class="mq"],
+div[role="complementary"]>div[class="nH"]>div[class="nH"]>div[class="u5"]>div[class="oM"],
+div[class="AO"]>div[id=":4"]>div[id=":2"]>div[class="nH"]>div[class*="BltHke"]>div[class*="mq"],
+div[class*="ar4"]>div[class="AO"]>div[class*="Tm"]>div[class="aeF"]>div[class="nH"]>div[class*="BltHke"]>div[class="mq"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+table[class="ae6"]>tbody>tr>td[class="aBC"]>div[class="mB"],
+table[class="ae6"]>tbody>tr>td[class="aBC"]>div[class="mv"]>div[class="aBD"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* sidebar ads */
+
+table[class*="Bs nH iY"] td[class*="Bu y3"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+div[class*="T0 pp"] div.pY {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+td.Bu div.hx div.PS {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* inbox top-banner ads */
+
+table tr[class*='aKA D6NH0b zE'],
+table tr[class*='aKA D6NH0b  zE'],
+table tr[class*='aKA  D6NH0b  zE'] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* inbox style adjustments */
+
+div.no div.eJ, div.no div[class*="Ar As"] {
+	width: 60% !important;
+}
+
+div[class*="l2 ov"] div.aeV, div[class*="l2 ov"] div.ae3 {
+  width: 50% !important;
+}

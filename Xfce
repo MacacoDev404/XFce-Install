@@ -43,6 +43,9 @@ echo "Configurando fastfetch"
 mkdir -p .config/fastfetch
 mv config.jsonc .config/fastfetch
 
+echo "Configurando Opera"
+mv opera ~/.config
+
 echo "Configurando o nano"
 mv .nanorc ~/
 

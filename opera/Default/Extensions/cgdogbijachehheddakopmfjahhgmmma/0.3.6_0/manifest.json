@@ -1,0 +1,42 @@
+{
+   "background": {
+      "service_worker": "background.js"
+   },
+   "commands": {
+      "_execute_action": {
+      }
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "data/content_script/inject.css" ],
+      "js": [ "data/content_script/inject.js" ],
+      "matches": [ "*://*.youtube.com/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Removes all annoying ads and banners from YouTube!",
+   "developer": {
+      "name": "dr34polw"
+   },
+   "homepage_url": "https://mybrowseraddon.com/adblocker-for-youtube.html",
+   "icons": {
+      "128": "data/icons/128.png",
+      "16": "data/icons/16.png",
+      "32": "data/icons/32.png",
+      "48": "data/icons/48.png",
+      "64": "data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAupvlSz3+AawVHFIABw4k69PzREyWN/2nQKxmih1H6fITQrTxRK9EzMbrLIZRFF3H+q8NPabFj/LvaaTmDWRWJ1gK++4ypxYPzbVEfOCeZdp9eb7s+xlDnD+YrQ2NLjJeN6v9aA5x6/AzwG3COLa239DlRgpYeHmr7So7OSw1+Dp5R43mchUaLcEuRKztQx+spWMYldUceT+QgWcmTmUmhrgeGKHMufSt6yEk9WuGSnhJsChD0oa+G07OKbMcAy0+I088uOXoGQ0P78f9ASQlonBJw3+LSh2usWqFpEzMvtgJ3Uk1T4FX8RJXg1qOIZ2BAXuL4PVyT6zerdRxGI3ciQIDAQAB",
+   "manifest_version": 3,
+   "name": "AdBlocker for YouTube™",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "data/options/options.html"
+   },
+   "permissions": [ "storage", "declarativeNetRequest" ],
+   "update_url": "https://extension-updates.opera.com/api/omaha/update/",
+   "version": "0.3.6",
+   "web_accessible_resources": [ {
+      "matches": [ "*://*.youtube.com/*" ],
+      "resources": [ "data/content_script/page_context/inject.js" ]
+   } ]
+}

@@ -1,0 +1,36 @@
+2025/09/14-11:36:35.556 6a4 Reusing MANIFEST /home/marcondes/.config/opera/Default/Local Extension Settings/bopfaehpakahokaelnomggbohfbimcia/MANIFEST-000001
+2025/09/14-11:36:35.557 6a4 Recovering log #13
+2025/09/14-11:36:35.967 6a4 Reusing old log /home/marcondes/.config/opera/Default/Local Extension Settings/bopfaehpakahokaelnomggbohfbimcia/000013.log 
+2025/09/14-11:36:39.503 63b Level-0 table #17: started
+2025/09/14-11:36:39.660 63b Level-0 table #17: 1771137 bytes OK
+2025/09/14-11:36:39.771 63b Delete type=0 #13
+2025/09/14-11:36:39.772 63b Compacting 4@0 + 1@1 files
+2025/09/14-11:36:39.980 63b Generated table #18@0: 4 keys, 443141 bytes
+2025/09/14-11:36:39.980 63b Compacted 4@0 + 1@1 files => 443141 bytes
+2025/09/14-11:36:40.122 63b compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/09/14-11:36:40.122 63b Delete type=2 #7
+2025/09/14-11:36:40.122 63b Delete type=2 #14
+2025/09/14-11:36:40.122 63b Delete type=2 #11
+2025/09/14-11:36:40.122 63b Delete type=2 #9
+2025/09/14-11:36:40.122 63b Delete type=2 #17
+2025/09/14-12:06:47.403 63c Level-0 table #20: started
+2025/09/14-12:06:47.526 63c Level-0 table #20: 1772138 bytes OK
+2025/09/14-12:06:47.562 63c Delete type=0 #16
+2025/09/14-14:06:55.188 63c Level-0 table #22: started
+2025/09/14-14:06:55.310 63c Level-0 table #22: 1774940 bytes OK
+2025/09/14-14:06:55.345 63c Delete type=0 #19
+2025/09/14-16:07:02.249 63c Level-0 table #24: started
+2025/09/14-16:07:02.372 63c Level-0 table #24: 1771449 bytes OK
+2025/09/14-16:07:02.405 63c Delete type=0 #21
+2025/09/14-18:07:10.353 63c Level-0 table #26: started
+2025/09/14-18:07:10.673 63c Level-0 table #26: 1773848 bytes OK
+2025/09/14-18:07:10.710 63c Delete type=0 #23
+2025/09/14-18:07:10.712 63c Compacting 4@0 + 1@1 files
+2025/09/14-18:07:10.816 63c Generated table #27@0: 4 keys, 443207 bytes
+2025/09/14-18:07:10.816 63c Compacted 4@0 + 1@1 files => 443207 bytes
+2025/09/14-18:07:10.850 63c compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/09/14-18:07:10.851 63c Delete type=2 #26
+2025/09/14-18:07:10.851 63c Delete type=2 #20
+2025/09/14-18:07:10.851 63c Delete type=2 #24
+2025/09/14-18:07:10.851 63c Delete type=2 #22
+2025/09/14-18:07:10.851 63c Delete type=2 #18

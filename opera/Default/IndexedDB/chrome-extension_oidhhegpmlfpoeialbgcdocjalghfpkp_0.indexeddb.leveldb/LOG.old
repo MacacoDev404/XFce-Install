@@ -1,0 +1,6 @@
+2025/09/14-11:37:25.737 63c Reusing MANIFEST /home/marcondes/.config/opera/Default/IndexedDB/chrome-extension_oidhhegpmlfpoeialbgcdocjalghfpkp_0.indexeddb.leveldb/MANIFEST-000001
+2025/09/14-11:37:25.738 63c Recovering log #3
+2025/09/14-11:37:25.808 63c Reusing old log /home/marcondes/.config/opera/Default/IndexedDB/chrome-extension_oidhhegpmlfpoeialbgcdocjalghfpkp_0.indexeddb.leveldb/000003.log 
+2025/09/14-16:49:40.663 63c Level-0 table #5: started
+2025/09/14-16:49:40.818 63c Level-0 table #5: 865204 bytes OK
+2025/09/14-16:49:40.888 63c Delete type=0 #3
