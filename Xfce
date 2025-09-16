@@ -19,14 +19,37 @@ sudo pacman -S $PACOTES_BASE $PACOTES_MULTIMIDIA $PACOTES_THUNAR $PACOTES_SISTEM
 
 echo "Instalação de pacotes concluída."
 
+echo "Iniciando a configuração do pacman.conf..."
+
+# Descomenta a seção [multilib]
+sudo sed -i 's/#\[multilib\]/\[multilib\]/g' /etc/pacman.conf
+
+# Descomenta a linha Include
+sudo sed -i 's/#Include = \/etc\/pacman.d\/mirrorlist/Include = \/etc\/pacman.d\/mirrorlist/g' /etc/pacman.conf
+
+echo "pacman.conf configurado com sucesso!"
+
+echo "Atualizando novamente o Sistema"
+sudo pacman -Syu
+
+echo "Instalando yay"
+mkdir -p .Aur 
+cd .Aur
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+echo "Voltando pro home"
+cd ~/
+
 echo "Instalando drives da gtx550ti via reporitorio Arch (Aur)"
  
-yay -S nvidia-390xx-dkms nvidia-390xx-utils nvidia-390xx-settings lib32-nvidia-390xx-utils
+yay -S --noconfirm nvidia-390xx-dkms nvidia-390xx-utils nvidia-390xx-settings lib32-nvidia-390xx-utils
 
 echo "Instalação de drives concluida!"
 
 echo "Colocando o Noveau em blacklist"
-
+echo "blacklist nouveau" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf > /dev/null
   
 echo "Gerando initramfs"
 sudo mkinitcpio -P
@@ -49,5 +72,10 @@ mv opera ~/.config
 echo "Configurando o nano"
 mv .nanorc ~/
 
-echo "Reiniciando o Sistema"
+echo "Removendo Lixos"
+sudo rm -rf .Aur
+
+echo "Reiniciando o Sistema em 5 Segundos"
+sleep 5
 sudo reboot
+
