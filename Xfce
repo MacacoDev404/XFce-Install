@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+echo "O script deve ser executado com sudo"
+sleep 2 
+if  [ "$EUID" -ne 0 ]; then
+exit 1
+fi
+echo "continuando" 
+
 # Define os pacotes que serão instalados
 PACOTES_BASE="xfce4 xorg lightdm-webkit2-greeter lightdm-gtk-greeter lightdm-gtk-greeter-settings linux-lts-headers "
 PACOTES_MULTIMIDIA="ffmpeg vlc"

@@ -1,27 +1,23 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
-
   "logo": {
-    "source": "gnu"
+    "source": "gnu",
+    "padding": { "right": 4 }
   },
-
   "modules": [
     "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "packages",
-    "shell",
-    "de",
-    "wm",
-    "cpu",
-    "gpu",
-    "memory",
+    { "type": "separator", "string": " " },
+    { "type": "os", "key": " Sistema", "keyColor": "cyan" },
+    { "type": "host", "key": " Máquina", "keyColor": "cyan" },
+    { "type": "kernel", "key": " Kernel", "keyColor": "cyan" },
+    { "type": "packages", "key": " Pacotes", "keyColor": "cyan" },
+    { "type": "shell", "key": " Shell", "keyColor": "cyan" },
+    { "type": "de", "key": "缾 DE", "keyColor": "cyan" },
+    { "type": "wm", "key": "缾 WM", "keyColor": "cyan" },
+    { "type": "cpu", "key": "﬙ CPU", "format": "{1} ({5})", "keyColor": "cyan" },
+    { "type": "gpu", "key": "GPU", "keyColor": "cyan" },
+    { "type": "memory", "key": " Memória", "keyColor": "cyan" },
     "break",
-    {
-      "type": "colors",
-      "symbol": "circle" // Correção: "symbol" em vez de "key"
-    }
+    { "type": "colors", "symbol": "circle" }
   ]
 }
